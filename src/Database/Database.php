@@ -74,7 +74,9 @@ class Database
     /**
      * Database Constructor
      */
-    private function __construct(){}
+    private function __construct($table){
+        static::$table = $table;
+    }
 
     private static function connect()
     {
@@ -102,8 +104,9 @@ class Database
     private static function instance()
     {
         static::connect();
+        $table = static::$table;
         if (! static::$instance) {
-            static::$instance = new Database();
+            static::$instance = new Database($table);
         }
         return static::$instance;
     }

@@ -14,9 +14,7 @@ class Validate
     {
         $validator = new Validator;
         $validator->addValidator('unique', new UniqueRule());
-
         $validation = $validator->validate($_POST + $_FILES, $rules);
-
         $errors = $validation->errors();
 
         if ($validation->fails()) {
@@ -25,7 +23,6 @@ class Validate
             } else {
                 Session::set('errors', $errors);
                 Session::set('old', Request::all());
-
                 return Url::redirect(Url::previous());
             }
         }
