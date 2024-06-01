@@ -1,0 +1,25 @@
+{
+    "name": "lordsaudkaric/dalailamacore",
+    "description": "DalaiLama is php lite framework for web apps",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "LordSaudKaric",
+            "email": "saud-karic@hotmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=8.2",
+        "ext-pdo": "*",
+        "rakit/validation": "^1.4",
+        "spatie/ignition": "^1.14",
+        "jenssegers/blade": "^1.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Dalailama\\": "src/"
+        }
+    }
+}
