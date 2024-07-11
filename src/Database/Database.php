@@ -183,7 +183,7 @@ class Database
         }
 
         static::$where .= $stmt;
-        static::$where_binding[] = htmlspecialchars($value ?? '');
+        static::$where_binding[] = htmlspecialchars((string)$value ?? '');
 
         return static::instance();
     }
