@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 namespace Dalailama\Cookie;
 
 class Cookie
@@ -13,7 +13,7 @@ class Cookie
      * @param $key
      * @return bool
      */
-    public static function has($key)
+    public static function has($key): bool
     {
         return isset($_COOKIE[$key]);
     }
@@ -24,7 +24,7 @@ class Cookie
      * @param $value
      * @return void
      */
-    public static function set($key, $value)
+    public static function set($key, $value): void
     {
         setcookie($key, $value, strtotime( '+2 days' ), "/", "", false, true);
     }
@@ -34,7 +34,7 @@ class Cookie
      * @param $key
      * @return mixed|null
      */
-    public static function get($key)
+    public static function get($key): mixed
     {
         return self::has($key) ? $_COOKIE[$key] : null;
 
@@ -45,7 +45,7 @@ class Cookie
      * @param $key
      * @return void
      */
-    public static function remove($key)
+    public static function remove($key): void
     {
         setcookie($key, '', '-1', "/");
     }
@@ -54,7 +54,7 @@ class Cookie
      * Return all Cookie
      * @return array
      */
-    public static function all()
+    public static function all(): array
     {
         return $_COOKIE;
     }
@@ -63,7 +63,7 @@ class Cookie
      * Destroy all session
      * @return void
      */
-    public static function destroy()
+    public static function destroy(): void
     {
         foreach (self::all() as $key => $value) {
             self::remove($key);

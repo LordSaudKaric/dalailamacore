@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 namespace Dalailama\Bootstrap;
 
 use Dalailama\Exception\Ignition;
@@ -19,7 +19,7 @@ class Application
      * Run the Application
      * @return void
      */
-    public static function run()
+    public static function run(): void
     {
         // Ignition is a beautiful and customizable
         // error page for PHP applications
