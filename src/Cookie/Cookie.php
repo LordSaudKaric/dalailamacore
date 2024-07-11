@@ -47,7 +47,7 @@ class Cookie
      */
     public static function remove($key): void
     {
-        setcookie($key, '', '-1', "/");
+        setcookie($key, '', -1, "/");
     }
 
     /**
