@@ -26,7 +26,7 @@ class Cookie
      */
     public static function set($key, $value): void
     {
-        setcookie($key, $value, strtotime( '+2 days' ), "/", "", false, true);
+        setcookie($key, (string)$value, strtotime( '+2 days' ), "/", "", false, true);
     }
 
     /**
